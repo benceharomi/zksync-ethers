@@ -97,7 +97,7 @@ describe('Provider', () => {
 
   describe('#getGasPrice()', () => {
     it('should return a gas price', async () => {
-      const GAS_PRICE = 250_000_000n;
+      const GAS_PRICE = 100_000_000n;
       const result = await provider.getGasPrice();
       expect(result).to.be.equal(GAS_PRICE);
     });

@@ -188,11 +188,11 @@ describe('Wallet', () => {
         type: utils.EIP712_TX_TYPE,
         from: ADDRESS,
         nonce: await wallet.getNonce('pending'),
-        gasLimit: 154_379n,
+        gasLimit: 156_726n,
         chainId: 270n,
         data: '0x',
         customData: {gasPerPubdata: 50_000, factoryDeps: []},
-        gasPrice: 250_000_000n,
+        gasPrice: 100_000_000n,
       };
 
       const result = await wallet.populateTransaction({
@@ -211,7 +211,7 @@ describe('Wallet', () => {
         from: ADDRESS,
         nonce: await wallet.getNonce('pending'),
         chainId: 270n,
-        maxFeePerGas: 1_500_000_000n,
+        maxFeePerGas: 1_200_000_000n,
         maxPriorityFeePerGas: 1_000_000_000n,
       };
       const result = await wallet.populateTransaction({
@@ -349,7 +349,7 @@ describe('Wallet', () => {
         from: ADDRESS,
         nonce: await wallet.getNonce('pending'),
         chainId: 270n,
-        gasPrice: 250_000_000n,
+        gasPrice: 100_000_000n,
       };
       const result = await wallet.populateTransaction({
         type: 0,
@@ -467,7 +467,7 @@ describe('Wallet', () => {
         contractAddress: ADDRESS,
         calldata: '0x',
         l2Value: 7_000_000,
-        l2GasLimit: '0x8cbaa',
+        l2GasLimit: '0x56d78',
         token: '0x0000000000000000000000000000000000000000',
         to: ADDRESS,
         amount: 7_000_000,
@@ -475,9 +475,9 @@ describe('Wallet', () => {
         operatorTip: 0,
         overrides: {
           from: ADDRESS,
-          maxFeePerGas: 1_500_000_010n,
+          maxFeePerGas: 1_500_000_001n,
           maxPriorityFeePerGas: 1_500_000_000n,
-          value: 288_213_007_000_000n,
+          value: 95_595_457_000_000n,
         },
         gasPerPubdataByte: 800,
       };
@@ -495,7 +495,7 @@ describe('Wallet', () => {
         contractAddress: ADDRESS,
         calldata: '0x',
         l2Value: 7_000_000,
-        l2GasLimit: '0x8cbaa',
+        l2GasLimit: '0x56d78',
         token: '0x0000000000000000000000000000000000000000',
         to: ADDRESS,
         amount: 7_000_000,
@@ -503,9 +503,9 @@ describe('Wallet', () => {
         operatorTip: 0,
         overrides: {
           from: ADDRESS,
-          maxFeePerGas: 1_500_000_010n,
+          maxFeePerGas: 1_500_000_001n,
           maxPriorityFeePerGas: 1_500_000_000n,
-          value: 288_213_007_000_000n,
+          value: 95_595_457_000_000n,
         },
         gasPerPubdataByte: 800,
       };
@@ -519,9 +519,9 @@ describe('Wallet', () => {
 
     it('should return a DAI deposit transaction', async () => {
       const tx = {
-        maxFeePerGas: 1_500_000_010n,
+        maxFeePerGas: 1_500_000_001n,
         maxPriorityFeePerGas: 1_500_000_000n,
-        value: 288_992_000_000_000n,
+        value: 107_602_662_500_000n,
         from: ADDRESS,
         to: await (await wallet.getL1BridgeContracts()).erc20.getAddress(),
       };
@@ -543,7 +543,7 @@ describe('Wallet', () => {
         amount: 5,
         refundRecipient: await wallet.getAddress(),
       });
-      expect(result).to.be.equal(132_711n);
+      expect(result).to.be.equal(179_401n);
     });
 
     it('should return a gas estimation for the DAI deposit transaction', async () => {
@@ -553,7 +553,7 @@ describe('Wallet', () => {
         amount: 5,
         refundRecipient: await wallet.getAddress(),
       });
-      expect(result).to.be.equal(253_418n);
+      expect(result).to.be.equal(407_102n);
     });
   });
 
@@ -661,10 +661,10 @@ describe('Wallet', () => {
   describe('#getFullRequiredDepositFee()', () => {
     it('should return a fee for ETH token deposit', async () => {
       const feeData = {
-        baseCost: 285_096_500_000_000n,
-        l1GasLimit: 132_711n,
-        l2GasLimit: '0x8b351',
-        maxFeePerGas: 1_500_000_010n,
+        baseCost: 95_595_450_000_000n,
+        l1GasLimit: 179_401n,
+        l2GasLimit: '0x56d78',
+        maxFeePerGas: 1_500_000_001n,
         maxPriorityFeePerGas: 1_500_000_000n,
       };
       const result = await wallet.getFullRequiredDepositFee({
@@ -689,10 +689,10 @@ describe('Wallet', () => {
 
     it('should return a fee for DAI token deposit', async () => {
       const feeData = {
-        baseCost: 288_992_000_000_000n,
-        l1GasLimit: 253_177n,
-        l2GasLimit: '0x8d1c0',
-        maxFeePerGas: 1_500_000_010n,
+        baseCost: 107_602_662_500_000n,
+        l1GasLimit: 406_712n,
+        l2GasLimit: '0x61bfe',
+        maxFeePerGas: 1_500_000_001n,
         maxPriorityFeePerGas: 1_500_000_000n,
       };
 
