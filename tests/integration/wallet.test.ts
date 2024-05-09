@@ -543,7 +543,7 @@ describe('Wallet', () => {
         amount: 5,
         refundRecipient: await wallet.getAddress(),
       });
-      expect(result).to.be.equal(179_401n);
+      expect(result).to.be.equal(179_428n);
     });
 
     it('should return a gas estimation for the DAI deposit transaction', async () => {
@@ -553,7 +553,7 @@ describe('Wallet', () => {
         amount: 5,
         refundRecipient: await wallet.getAddress(),
       });
-      expect(result).to.be.equal(407_102n);
+      expect(result).to.be.equal(407_128n);
     });
   });
 
@@ -662,7 +662,7 @@ describe('Wallet', () => {
     it('should return a fee for ETH token deposit', async () => {
       const feeData = {
         baseCost: 95_595_450_000_000n,
-        l1GasLimit: 179_401n,
+        l1GasLimit: 179_428n,
         l2GasLimit: '0x56d78',
         maxFeePerGas: 1_500_000_001n,
         maxPriorityFeePerGas: 1_500_000_000n,
@@ -690,7 +690,7 @@ describe('Wallet', () => {
     it('should return a fee for DAI token deposit', async () => {
       const feeData = {
         baseCost: 107_602_662_500_000n,
-        l1GasLimit: 406_712n,
+        l1GasLimit: 406_738n,
         l2GasLimit: '0x61bfe',
         maxFeePerGas: 1_500_000_001n,
         maxPriorityFeePerGas: 1_500_000_000n,

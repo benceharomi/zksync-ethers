@@ -139,7 +139,7 @@ describe('SmartAccount', async () => {
         type: utils.EIP712_TX_TYPE,
         from: '0x36615Cf349d7F6344891B1e7CA7C72883F5dc049',
         nonce: await account.getNonce('pending'),
-        gasLimit: 156_378n,
+        gasLimit: 156_726n,
         chainId: 270n,
         data: '0x',
         customData: {gasPerPubdata: 50_000, factoryDeps: []},
