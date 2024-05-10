@@ -436,7 +436,7 @@ describe('L1VoidSigner', () => {
         nonce: await signer.getNonce('pending'),
         chainId: 9n,
         maxFeePerGas: 1_000_000_002n,
-        maxPriorityFeePerGas: 1_500_000_000n,
+        maxPriorityFeePerGas: 1_000_000_000n,
       };
       const result = await signer.populateTransaction({
         to: RECEIVER,
@@ -579,8 +579,8 @@ describe('L1VoidSigner', () => {
     it('should return DAI deposit transaction', async () => {
       const tx = {
         maxFeePerGas: 1_000_000_001n,
-        maxPriorityFeePerGas: 1_500_000_000n,
-        value: 107_602_662_500_000n,
+        maxPriorityFeePerGas: 1_000_000_000n,
+        value: 105_100_275_000_000n,
         from: ADDRESS,
         to: await (await signer.getL1BridgeContracts()).erc20.getAddress(),
       };
