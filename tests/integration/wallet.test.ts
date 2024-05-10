@@ -475,9 +475,9 @@ describe('Wallet', () => {
         operatorTip: 0,
         overrides: {
           from: ADDRESS,
-          maxFeePerGas: 1_500_000_001n,
-          maxPriorityFeePerGas: 1_500_000_000n,
-          value: 95_595_457_000_000n,
+          maxFeePerGas: 1_000_000_001n,
+          maxPriorityFeePerGas: 1_000_000_000n,
+          value: 93_372_307_000_000n,
         },
         gasPerPubdataByte: 800,
       };
@@ -503,9 +503,9 @@ describe('Wallet', () => {
         operatorTip: 0,
         overrides: {
           from: ADDRESS,
-          maxFeePerGas: 1_500_000_001n,
-          maxPriorityFeePerGas: 1_500_000_000n,
-          value: 95_595_457_000_000n,
+          maxFeePerGas: 1_000_000_001n,
+          maxPriorityFeePerGas: 1_000_000_000n,
+          value: 93_372_307_000_000n,
         },
         gasPerPubdataByte: 800,
       };
@@ -519,7 +519,7 @@ describe('Wallet', () => {
 
     it('should return a DAI deposit transaction', async () => {
       const tx = {
-        maxFeePerGas: 1_500_000_001n,
+        maxFeePerGas: 1_000_000_001n,
         maxPriorityFeePerGas: 1_500_000_000n,
         value: 107_602_662_500_000n,
         from: ADDRESS,
@@ -661,11 +661,11 @@ describe('Wallet', () => {
   describe('#getFullRequiredDepositFee()', () => {
     it('should return a fee for ETH token deposit', async () => {
       const feeData = {
-        baseCost: 95_595_450_000_000n,
+        baseCost: 93_372_300_000_000n,
         l1GasLimit: 179_428n,
         l2GasLimit: '0x56d78',
-        maxFeePerGas: 1_500_000_001n,
-        maxPriorityFeePerGas: 1_500_000_000n,
+        maxFeePerGas: 1_000_000_001n,
+        maxPriorityFeePerGas: 1_000_000_000n,
       };
       const result = await wallet.getFullRequiredDepositFee({
         token: utils.ETH_ADDRESS,
@@ -689,11 +689,11 @@ describe('Wallet', () => {
 
     it('should return a fee for DAI token deposit', async () => {
       const feeData = {
-        baseCost: 107_602_662_500_000n,
+        baseCost: 105_100_275_000_000n,
         l1GasLimit: 406_738n,
         l2GasLimit: '0x61bfe',
-        maxFeePerGas: 1_500_000_001n,
-        maxPriorityFeePerGas: 1_500_000_000n,
+        maxFeePerGas: 1_000_000_001n,
+        maxPriorityFeePerGas: 1_000_000_000n,
       };
 
       const tx = await wallet.approveERC20(DAI_L1, 5);

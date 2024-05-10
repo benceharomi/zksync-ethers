@@ -435,7 +435,7 @@ describe('L1VoidSigner', () => {
         from: ADDRESS,
         nonce: await signer.getNonce('pending'),
         chainId: 9n,
-        maxFeePerGas: 1_500_000_002n,
+        maxFeePerGas: 1_000_000_002n,
         maxPriorityFeePerGas: 1_500_000_000n,
       };
       const result = await signer.populateTransaction({
@@ -492,7 +492,7 @@ describe('L1VoidSigner', () => {
         from: ADDRESS,
         nonce: await signer.getNonce('pending'),
         chainId: 9n,
-        gasPrice: 1_500_000_001n,
+        gasPrice: 1_000_000_001n,
       };
       const result = await signer.populateTransaction({
         type: 0,
@@ -534,9 +534,9 @@ describe('L1VoidSigner', () => {
         operatorTip: 0,
         overrides: {
           from: ADDRESS,
-          maxFeePerGas: 1_500_000_001n,
-          maxPriorityFeePerGas: 1_500_000_000n,
-          value: 95_595_457_000_000n,
+          maxFeePerGas: 1_000_000_001n,
+          maxPriorityFeePerGas: 1_000_000_000n,
+          value: 93_372_307_000_000n,
         },
         gasPerPubdataByte: 800,
       };
@@ -562,9 +562,9 @@ describe('L1VoidSigner', () => {
         operatorTip: 0,
         overrides: {
           from: ADDRESS,
-          maxFeePerGas: 1_500_000_001n,
-          maxPriorityFeePerGas: 1_500_000_000n,
-          value: 95_595_457_000_000n,
+          maxFeePerGas: 1_000_000_001n,
+          maxPriorityFeePerGas: 1_000_000_000n,
+          value: 93_372_307_000_000n,
         },
         gasPerPubdataByte: 800,
       };
@@ -578,7 +578,7 @@ describe('L1VoidSigner', () => {
 
     it('should return DAI deposit transaction', async () => {
       const tx = {
-        maxFeePerGas: 1_500_000_001n,
+        maxFeePerGas: 1_000_000_001n,
         maxPriorityFeePerGas: 1_500_000_000n,
         value: 107_602_662_500_000n,
         from: ADDRESS,
@@ -664,11 +664,11 @@ describe('L1VoidSigner', () => {
   describe('#getFullRequiredDepositFee()', () => {
     it('should return fee for ETH token deposit', async () => {
       const feeData = {
-        baseCost: 95_595_450_000_000n,
+        baseCost: 93_372_300_000_000n,
         l1GasLimit: 179_428n,
         l2GasLimit: '0x56d78',
-        maxFeePerGas: 1_500_000_001n,
-        maxPriorityFeePerGas: 1_500_000_000n,
+        maxFeePerGas: 1_000_000_001n,
+        maxPriorityFeePerGas: 1_000_000_000n,
       };
       const result = await signer.getFullRequiredDepositFee({
         token: utils.ETH_ADDRESS,
@@ -692,11 +692,11 @@ describe('L1VoidSigner', () => {
 
     it('should return fee for DAI token deposit', async () => {
       const feeData = {
-        baseCost: 107_602_662_500_000n,
+        baseCost: 105_100_275_000_000n,
         l1GasLimit: 406_738n,
         l2GasLimit: '0x61bfe',
-        maxFeePerGas: 1_500_000_001n,
-        maxPriorityFeePerGas: 1_500_000_000n,
+        maxFeePerGas: 1_000_000_001n,
+        maxPriorityFeePerGas: 1_000_000_000n,
       };
 
       const result = await signer.getFullRequiredDepositFee({
